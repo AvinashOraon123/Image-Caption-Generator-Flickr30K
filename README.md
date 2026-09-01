@@ -48,13 +48,13 @@ Before training, the caption vocabulary was analyzed to understand word frequenc
 
 **Word Cloud of Caption Frequencies**
 
-![Word Cloud]([assets/word_cloud.png](https://github.com/user-attachments/assets/8ff8b272-1c72-451d-81b7-21871c1f6539))
+![Word Cloud](<img width="1098" height="581" alt="Image" src="https://github.com/user-attachments/assets/8ff8b272-1c72-451d-81b7-21871c1f6539" />)
 
 The most frequent words are dominated by common structural/descriptive terms — *"man," "woman," "people," "two," "wearing," "standing"* — reflecting the nature of Flickr30k's captions, which mostly describe people engaged in everyday activities and their appearance.
 
 **Least Frequently Appearing Words**
 
-![Least 50 Appearing Words]([assets/least50_words.png](https://github.com/user-attachments/assets/d9ac2956-3839-4dc5-b0dd-94b21294929e))
+![Least 50 Appearing Words](<img width="995" height="510" alt="Image" src="https://github.com/user-attachments/assets/c2af7c57-070b-4884-ab10-a73d964f2bc9" />)
 
 A large portion of the vocabulary consists of rare, long-tail words (e.g. *"fishbowls," "bathrobes," "windsailing"*) that appear only once in the entire training set. This long-tail distribution is a known challenge for caption generation — the model sees these words so rarely during training that it struggles to learn meaningful embeddings for them, making it far more likely to default to common, generic words at inference time instead.
 
