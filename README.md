@@ -4,7 +4,7 @@ An end-to-end deep learning project that automatically generates descriptive cap
 
 ## 🚀 Demo
 
-https://github.com/user-attachments/assets/demo_video.mp4
+[https://github.com/user-attachments/assets/demo_video.mp4](https://github.com/user-attachments/assets/9ee9ad25-fdd0-4d47-b866-3bd4102ba331)
 
 
 
