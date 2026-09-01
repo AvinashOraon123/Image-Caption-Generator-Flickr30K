@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Large trained model checkpoints
+model_checkpoints/*.h5
+
+# Large dataset files
+
+TextFiles/glove*.txt
+
+
+# Optional: common large local artifacts
+*.zip
+*.tar
+*.gz
+*.log
+
+# Jupyter checkpoint folders
+.ipynb_checkpoints/
