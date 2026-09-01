@@ -34,7 +34,7 @@ $\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad$ `Add` $\rightarrow$ `Den
 
 ## 📊 Dataset & Training
 
-- **Dataset**: [Flickr30k](https://www.kaggle.com/datasets/adityapathak/flickr30k) (contains 31,000 images with 5 captions each).
+- **Dataset**: [Flickr30k]([https://www.kaggle.com/datasets/adityapathak/flickr30k](https://www.kaggle.com/datasets/matheusmt/flickr30k)) (contains 31,000 images with 5 captions each).
 - **Word Embeddings**: **GloVe 6B (50d)** used to provide semantic meaning to words.
 - **Training**: 
     - **Optimizer**: Adam
@@ -48,13 +48,13 @@ Before training, the caption vocabulary was analyzed to understand word frequenc
 
 **Word Cloud of Caption Frequencies**
 
-![Word Cloud](assets/word_cloud.png)
+![Word Cloud]([assets/word_cloud.png](https://github.com/user-attachments/assets/8ff8b272-1c72-451d-81b7-21871c1f6539))
 
 The most frequent words are dominated by common structural/descriptive terms — *"man," "woman," "people," "two," "wearing," "standing"* — reflecting the nature of Flickr30k's captions, which mostly describe people engaged in everyday activities and their appearance.
 
 **Least Frequently Appearing Words**
 
-![Least 50 Appearing Words](assets/least50_words.png)
+![Least 50 Appearing Words]([assets/least50_words.png](https://github.com/user-attachments/assets/d9ac2956-3839-4dc5-b0dd-94b21294929e))
 
 A large portion of the vocabulary consists of rare, long-tail words (e.g. *"fishbowls," "bathrobes," "windsailing"*) that appear only once in the entire training set. This long-tail distribution is a known challenge for caption generation — the model sees these words so rarely during training that it struggles to learn meaningful embeddings for them, making it far more likely to default to common, generic words at inference time instead.
 
