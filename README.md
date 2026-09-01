@@ -34,7 +34,7 @@ $\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad$ `Add` $\rightarrow$ `Den
 
 ## 📊 Dataset & Training
 
-- **Dataset**: [Flickr30k]([https://www.kaggle.com/datasets/adityapathak/flickr30k](https://www.kaggle.com/datasets/matheusmt/flickr30k)) (contains 31,000 images with 5 captions each).
+- **Dataset**: [Flickr30k](https://www.kaggle.com/datasets/matheusmt/flickr30k) (contains 31,000 images with 5 captions each).
 - **Word Embeddings**: **GloVe 6B (50d)** used to provide semantic meaning to words.
 - **Training**: 
     - **Optimizer**: Adam
@@ -48,13 +48,13 @@ Before training, the caption vocabulary was analyzed to understand word frequenc
 
 **Word Cloud of Caption Frequencies**
 
-![Word Cloud](<img width="1098" height="581" alt="Image" src="https://github.com/user-attachments/assets/8ff8b272-1c72-451d-81b7-21871c1f6539" />)
+<img width="1098" height="581" alt="Word Cloud of Caption Frequencies" src="https://github.com/user-attachments/assets/8ff8b272-1c72-451d-81b7-21871c1f6539" />
 
 The most frequent words are dominated by common structural/descriptive terms — *"man," "woman," "people," "two," "wearing," "standing"* — reflecting the nature of Flickr30k's captions, which mostly describe people engaged in everyday activities and their appearance.
 
 **Least Frequently Appearing Words**
 
-![Least 50 Appearing Words](<img width="995" height="510" alt="Image" src="https://github.com/user-attachments/assets/c2af7c57-070b-4884-ab10-a73d964f2bc9" />)
+<img width="995" height="510" alt="Least 50 Appearing Words" src="https://github.com/user-attachments/assets/c2af7c57-070b-4884-ab10-a73d964f2bc9" />
 
 A large portion of the vocabulary consists of rare, long-tail words (e.g. *"fishbowls," "bathrobes," "windsailing"*) that appear only once in the entire training set. This long-tail distribution is a known challenge for caption generation — the model sees these words so rarely during training that it struggles to learn meaningful embeddings for them, making it far more likely to default to common, generic words at inference time instead.
 
@@ -120,6 +120,5 @@ Once the app starts, upload any image (JPG/PNG) and click **"Generate Caption"**
 ├── model_checkpoints/          # Saved model weights (.h5 files)
 ├── TextFiles/                  # Word mappings, tokens, and GloVe embeddings
 ├── screenshots/                # Sample result images referenced in this README
-├── assets/                     # Dataset analysis charts (word cloud, word frequency)
 └── README.md                   # You are here!
 ```
