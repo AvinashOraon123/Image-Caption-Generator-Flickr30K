@@ -62,11 +62,10 @@ Below are real outputs from the deployed Streamlit app, showing the uploaded ima
 
 | Image | Generated Caption |
 | :--- | :--- |
-| ![Football team](screenshots/sample1.jpg) | "a group of people are standing in a field" |
-| ![Friends outdoors](screenshots/sample2.jpg) | "a group of people are standing in a field" |
-| ![White dog running](screenshots/sample3.jpg) | "a small white dog running through a grassy field" |
+| ![Football team](screenshots/sample1.png) | "a group of people are standing in a field" |
+| ![Friends outdoors](screenshots/sample2.png) | "a construction worker in a blue shirt is digging a hole" |
+| ![White dog running](screenshots/sample3.png) | "a small white dog running through a grassy field" |
 
-> ⚠️ **Known limitation**: the first two examples (a football team photo and friends playing a lawn game) both produced the same generic caption despite showing visually distinct scenes. This is a common failure mode for greedy-search decoding paired with a single pooled image feature vector — the model captures the coarse "group of people outdoors" gist but loses finer detail. Adding an **attention mechanism** (see Future Improvements) would let the decoder focus on different image regions per word instead of compressing the whole image into one vector, which should reduce this kind of caption collapse.
 
 ---
 
