@@ -4,9 +4,7 @@ An end-to-end deep learning project that automatically generates descriptive cap
 
 ## 🚀 Demo
 
-[https://github.com/user-attachments/assets/demo_video.mp4](https://github.com/user-attachments/assets/9ee9ad25-fdd0-4d47-b866-3bd4102ba331)
-
-
+https://github.com/user-attachments/assets/9ee9ad25-fdd0-4d47-b866-3bd4102ba331
 
 ---
 
@@ -44,6 +42,24 @@ $\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad$ `Add` $\rightarrow$ `Den
     - **Epochs**: 30
 - **Weights**: The final trained weights are stored in `model_checkpoints/model_30.h5`.
 
+### 🔍 Vocabulary & Caption Analysis
+
+Before training, the caption vocabulary was analyzed to understand word frequency distribution across the dataset.
+
+**Word Cloud of Caption Frequencies**
+
+![Word Cloud](assets/word_cloud.png)
+
+The most frequent words are dominated by common structural/descriptive terms — *"man," "woman," "people," "two," "wearing," "standing"* — reflecting the nature of Flickr30k's captions, which mostly describe people engaged in everyday activities and their appearance.
+
+**Least Frequently Appearing Words**
+
+![Least 50 Appearing Words](assets/least50_words.png)
+
+A large portion of the vocabulary consists of rare, long-tail words (e.g. *"fishbowls," "bathrobes," "windsailing"*) that appear only once in the entire training set. This long-tail distribution is a known challenge for caption generation — the model sees these words so rarely during training that it struggles to learn meaningful embeddings for them, making it far more likely to default to common, generic words at inference time instead.
+
+---
+
 ### 📈 Performance Score
 The model was evaluated using the **BLEU (Bilingual Evaluation Understudy)** metric on the test set:
 
@@ -65,7 +81,6 @@ Below are real outputs from the deployed Streamlit app, showing the uploaded ima
 | ![Football team](screenshots/sample1.png) | "a group of people are standing in a field" |
 | ![Friends outdoors](screenshots/sample2.png) | "a construction worker in a blue shirt is digging a hole" |
 | ![White dog running](screenshots/sample3.png) | "a small white dog running through a grassy field" |
-
 
 ---
 
@@ -97,30 +112,6 @@ Once the app starts, upload any image (JPG/PNG) and click **"Generate Caption"**
 
 ---
 
-## 🎬 How to Embed the Demo Video
-
-GitHub's markdown doesn't play `.webm` or `.mp4` files through standard image syntax (`![]()`) — that syntax is for images only, so a raw video file linked that way won't render as a playable player; it'll just show a broken image icon or a plain download link. To get an actual inline, playable video on your README, use GitHub's built-in upload flow instead:
-
-1. **Record your screen** using the Streamlit app while generating a caption (Windows: `Win + G` for Xbox Game Bar, or free tools like OBS Studio / ShareX).
-2. On GitHub, go to your repo and click **Add file → Edit README.md** in the browser (or open any Issue in your repo — both work identically for this).
-3. **Drag and drop your video file directly into the text box.** GitHub automatically uploads it and inserts a link that looks like:
-   ```
-   https://github.com/user-attachments/assets/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-   ```
-4. Copy that link and paste it in place of the placeholder link in the **Demo** section at the top of this README. GitHub renders it as an inline, playable video automatically wherever that link appears on its own line.
-
-**Alternative options**, if you'd rather not use GitHub's upload flow:
-
-| Method | How |
-| :--- | :--- |
-| **Convert to GIF** | Use a tool like [ezgif.com](https://ezgif.com/video-to-gif) to convert your recording to a `.gif`, commit it into the repo, then embed it the same way as any image: `![Demo](screenshots/demo.gif)`. GIFs render natively in markdown with no special hosting. |
-| **YouTube thumbnail link** | Upload to YouTube (even unlisted), then use a clickable thumbnail: `[![Watch the demo](screenshots/thumbnail.jpg)](https://youtube.com/watch?v=YOUR_VIDEO_ID)`. Clicking opens YouTube in a new tab, since GitHub can't auto-play external embeds inline. |
-| **Plain link** | Simplest fallback: `[📺 Watch the demo video](link-to-video)` — no inline preview, just a clickable link. |
-
-> 💡 Option 1 (GitHub drag-and-drop) is recommended since it plays directly inline on your repo's page without needing any third-party hosting, and supports both `.mp4` and `.mov`. If your file is specifically `.webm`, note that GitHub's video embed feature has historically had more reliable support for `.mp4` — converting your recording to `.mp4` before uploading is safer if you run into playback issues.
-
----
-
 ## 📂 Project Structure
 ```text
 ├── app.py                      # Streamlit web application
@@ -129,6 +120,6 @@ GitHub's markdown doesn't play `.webm` or `.mp4` files through standard image sy
 ├── model_checkpoints/          # Saved model weights (.h5 files)
 ├── TextFiles/                  # Word mappings, tokens, and GloVe embeddings
 ├── screenshots/                # Sample result images referenced in this README
-├── demo_video.webm             # Project showcase video (see embedding note above)
+├── assets/                     # Dataset analysis charts (word cloud, word frequency)
 └── README.md                   # You are here!
 ```
